@@ -1,0 +1,47 @@
+os: unstable
+image: Visual Studio 2015
+
+platform:
+  - x64
+
+environment:
+  matrix:
+    - PYTHON: "C:\\Python35"
+      PYTHON_VERSION: "3.5.0"
+      PYTHON_ARCH: "64"
+
+before_build:
+  - SET ARCH=x64
+  - SET APP_PATH=%CD%
+  - mkdir opencv
+  - cd opencv
+  - git clone https://github.com/opencv/opencv.git
+  - git clone https://github.com/opencv/opencv_contrib.git
+  - cd opencv_contrib
+  - git checkout tags/3.4.0
+  - cd ../opencv
+  - git checkout tags/3.4.0
+  - mkdir -p build
+  - cd build
+  - cmake -G "Visual Studio 14 2015 Win64" -T host=x64 -D OPENCV_EXTRA_MODULES_PATH=$$PWD/../../../opencv_contrib/modules -D WITH_CUDA=OFF -D BUILD_opencv_contrib_world=ON -D BUILD_opencv_world=ON ..
+  - cmake --build . --config Release --target INSTALL
+  - echo %CD%
+  - SET OPENCV_DIR=%CD%\install\%ARCH%\vc14
+  - SET QTDIR=C:\Qt\5.7\msvc2015_64
+  - echo %OPENCV_DIR%
+  - cd ../../..
+  - ls
+
+build_script:
+  - cd build
+  - echo %OPENCV_DIR%
+  - echo %QTDIR%
+  - ps: $file = "$pwd\deploy.zip"
+  - ps: (new-object System.Net.WebClient).Downloadfile("https://github.com/livecv/live-pm/archive/master.zip", $file)
+  - ps: 7z x -y $file -o"."
+  - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
+  - mv live-pm-master/* .
+  - python --version
+  - python livepm/main.py build .. msvc2015_64
+  - python livepm/main.py deploy .. msvc2015_64
+  - dir

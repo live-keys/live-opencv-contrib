@@ -1,0 +1,3 @@
+module opencv.contrib.xfeatures2d
+plugin live_opencv_xfeatures2d
+

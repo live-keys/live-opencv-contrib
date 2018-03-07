@@ -4,7 +4,7 @@
 
 This plugin contains Open CV Contrib module QML wrappers that can be used for Live CV.
 
- * **Version**: 0.0.0
+ * **Version**: 1.0.0
  * **License**: LGPL
  * **Website**: [livecv.dinusv.com](http://livecv.dinusv.com)
  * **Documentation**: [livecv.dinusv.com/documentation](http://livecv.dinusv.com/documentation)

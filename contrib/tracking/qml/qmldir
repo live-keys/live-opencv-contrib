@@ -1,0 +1,3 @@
+module opencv.contrib.tracking
+plugin live_opencv_tracking
+

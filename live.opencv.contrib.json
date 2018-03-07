@@ -1,0 +1,81 @@
+{
+    "version" : "1.0.0",
+    "name": "opencv.contrib",
+    "webpage": "http://livecv.dinusv.com",
+    "dependencies" : [
+        {
+            "name": "livecv",
+            "version": "1.5.0",
+            "repository": "https://github.com/livecv/livecv.git"
+        }
+    ],
+    "components" : {
+        "opencv.contrib.tracking" : {
+            "version" : "1.0.0"
+        },
+        "opencv.contrib.xfeatures2d" : {
+            "version" : "1.0.0"
+        }
+    },
+    "releases" : {
+        "gcc_64" : {
+            "compiler" : "gcc_64",
+            "environment" : {
+                "OPENCV_DIR" : "opencv_dir",
+                "QTDIR" : "qtdir"
+            },
+            "build" : [
+                {"qmake" : ["-recursive"]},
+                {"make" : []}
+            ],
+            "deploy" : [
+                { "copy" : {
+                    "{release}/bin/opencv/contrib/tracking/qmldir" : "tracking/-",
+                    "{release}/bin/opencv/contrib/tracking/*.so" : "tracking/-",
+                    "{release}/bin/opencv/contrib/tracking/*.qml" : "tracking/-",
+                    "{source}/samples" : "opencv/contrib/-"
+                }}
+            ]
+        },
+        "msvc2013_64" : {
+            "compiler" : "msvc2013_64",
+            "environment" : {
+                "OPENCV_DIR" : "opencv_dir",
+                "QTDIR" : "qtdir",
+                "VS120COMNTOOLS": "vs120comntools"
+            },
+            "build" : [
+                {"qmake" : ["-recursive"]},
+                {"nmake" : []}
+            ],
+            "deploy" : [
+                { "copy" : {
+                    "{release}/bin/opencv/contrib/tracking/qmldir" : "tracking/-",
+                    "{release}/bin/opencv/contrib/tracking/*.dll" : "tracking/-",
+                    "{release}/bin/opencv/contrib/tracking/*.qml" : "tracking/-",
+                    "{release}/bin/opencv/contrib/tracking/dev/*.lib" : "tracking/dev/-",
+                    "{source}/samples" : "-"
+                }}
+            ]
+        },
+        "macos_clang_64" : {
+            "compiler" : "clang_64",
+            "environment" : {
+                "OPENCV_DIR" : "opencv_dir",
+                "QTDIR" : "qtdir"
+            },
+            "build" : [
+                {"qmake" : ["-recursive"]},
+                {"make" : []}
+            ],
+            "deploy" : [
+                { "copy" : {
+                    "{release}/bin/opencv/contrib/tracking/qmldir" : "tracking/-",
+                    "{release}/bin/opencv/contrib/tracking/*.dylib" : "tracking/-",
+                    "{release}/bin/opencv/contrib/tracking/*.qml" : "tracking/-",
+                    "{source}/samples" : "tracking/-"
+                }}
+            ]
+        }
+    }
+}
