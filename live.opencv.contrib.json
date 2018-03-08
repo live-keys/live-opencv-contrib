@@ -33,7 +33,7 @@
                     "{release}/bin/opencv/contrib/tracking/qmldir" : "tracking/-",
                     "{release}/bin/opencv/contrib/tracking/*.so" : "tracking/-",
                     "{release}/bin/opencv/contrib/tracking/*.qml" : "tracking/-",
-                    "{source}/samples" : "opencv/contrib/-"
+                    "{source}/samples" : "-"
                 }}
             ]
         },
@@ -73,7 +73,7 @@
                     "{release}/bin/opencv/contrib/tracking/qmldir" : "tracking/-",
                     "{release}/bin/opencv/contrib/tracking/*.dylib" : "tracking/-",
                     "{release}/bin/opencv/contrib/tracking/*.qml" : "tracking/-",
-                    "{source}/samples" : "tracking/-"
+                    "{source}/samples" : "-"
                 }}
             ]
         }
