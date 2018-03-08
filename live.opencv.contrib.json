@@ -33,6 +33,9 @@
                     "{release}/bin/opencv/contrib/tracking/qmldir" : "tracking/-",
                     "{release}/bin/opencv/contrib/tracking/*.so" : "tracking/-",
                     "{release}/bin/opencv/contrib/tracking/*.qml" : "tracking/-",
+                    "{release}/bin/opencv/contrib/xfeatures2d/qmldir" : "xfeatures2d/-",
+                    "{release}/bin/opencv/contrib/xfeatures2d/*.so" : "xfeatures2d/-",
+                    "{release}/bin/opencv/contrib/xfeatures2d/*.qml" : "xfeatures2d/-",
                     "{source}/samples" : "-"
                 }}
             ]
@@ -54,6 +57,10 @@
                     "{release}/bin/opencv/contrib/tracking/*.dll" : "tracking/-",
                     "{release}/bin/opencv/contrib/tracking/*.qml" : "tracking/-",
                     "{release}/bin/opencv/contrib/tracking/dev/*.lib" : "tracking/dev/-",
+                    "{release}/bin/opencv/contrib/xfeatures2d/qmldir" : "xfeatures2d/-",
+                    "{release}/bin/opencv/contrib/xfeatures2d/*.dll" : "xfeatures2d/-",
+                    "{release}/bin/opencv/contrib/xfeatures2d/*.qml" : "xfeatures2d/-",
+                    "{release}/bin/opencv/contrib/xfeatures2d/dev/*.lib" : "xfeatures2d/dev/-",
                     "{source}/samples" : "-"
                 }}
             ]
@@ -73,6 +80,9 @@
                     "{release}/bin/opencv/contrib/tracking/qmldir" : "tracking/-",
                     "{release}/bin/opencv/contrib/tracking/*.dylib" : "tracking/-",
                     "{release}/bin/opencv/contrib/tracking/*.qml" : "tracking/-",
+                    "{release}/bin/opencv/contrib/xfeatures2d/qmldir" : "xfeatures2d/-",
+                    "{release}/bin/opencv/contrib/xfeatures2d/*.dylib" : "xfeatures2d/-",
+                    "{release}/bin/opencv/contrib/xfeatures2d/*.qml" : "xfeatures2d/-",
                     "{source}/samples" : "-"
                 }}
             ]
