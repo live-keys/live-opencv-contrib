@@ -40,8 +40,8 @@
                 }}
             ]
         },
-        "msvc2013_64" : {
-            "compiler" : "msvc2013_64",
+        "msvc2015_64" : {
+            "compiler" : "msvc2015_64",
             "environment" : {
                 "OPENCV_DIR" : "opencv_dir",
                 "QTDIR" : "qtdir",

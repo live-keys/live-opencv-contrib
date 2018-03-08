@@ -65,11 +65,16 @@ install:
     fi
   - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then
       sudo apt-get install -y libtiff5 libtiff5-dev;
-      git clone https://github.com/Itseez/opencv.git;
+      git clone https://github.com/opencv/opencv.git;
+      git clone https://github.com/opencv/opencv_contrib.git;
+      cd opencv_contrib;
+      git checkout tags/3.4.0;
+      cd ..;
       cd opencv;
+      git checkout tags/3.4.0;
       mkdir build;
       cd build;
-      cmake ..;
+      cmake -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules ..;
       make -j8;
       sudo make -j8 install;
       export OPENCV_DIR=/usr/local/lib;

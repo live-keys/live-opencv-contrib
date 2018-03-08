@@ -13,24 +13,14 @@ environment:
 before_build:
   - SET ARCH=x64
   - SET APP_PATH=%CD%
-  - mkdir opencv
-  - cd opencv
-  - git clone https://github.com/opencv/opencv.git
-  - git clone https://github.com/opencv/opencv_contrib.git
-  - cd opencv_contrib
-  - git checkout tags/3.4.0
-  - cd ../opencv
-  - git checkout tags/3.4.0
-  - mkdir -p build
-  - cd build
-  - cmake -G "Visual Studio 14 2015 Win64" -T host=x64 -D OPENCV_EXTRA_MODULES_PATH=$$PWD/../../../opencv_contrib/modules -D WITH_CUDA=OFF -D BUILD_opencv_contrib_world=ON -D BUILD_opencv_world=ON ..
-  - cmake --build . --config Release --target INSTALL
+  - ps: $file = "$pwd\opencv.zip"
+  - ps: (new-object System.Net.WebClient).Downloadfile("https://github.com/livecv/opencv_contrib/releases/download/3.4.1/opencv-contrib-3-4-1-msvc2015-x64-release.zip", $file)
+  - ps: 7z x -y $file -o"."
+  - ls
   - echo %CD%
-  - SET OPENCV_DIR=%CD%\install\%ARCH%\vc14
+  - SET OPENCV_DIR=%CD%\opencv\build\%ARCH%\vc14
   - SET QTDIR=C:\Qt\5.7\msvc2015_64
   - echo %OPENCV_DIR%
-  - cd ../../..
-  - ls
 
 build_script:
   - cd build

@@ -1,6 +1,8 @@
 # Live CV - OpenCV.Contrib Module
 
 [![Join the chat at https://gitter.im/dinusv/livecv](https://badges.gitter.im/dinusv/livecv.svg)](https://gitter.im/dinusv/livecv?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/livecv/live-opencv-contrib.svg?branch=master)](https://travis-ci.org/livecv/live-opencv-contrib)
+[![Build status](https://ci.appveyor.com/api/projects/status/i4nkpu49ublysep2?svg=true)](https://ci.appveyor.com/project/dinusv/live-opencv-contrib)
 
 This plugin contains Open CV Contrib module QML wrappers that can be used for Live CV.
 
