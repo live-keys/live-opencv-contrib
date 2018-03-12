@@ -5,7 +5,7 @@ PLUGIN_PATH = opencv/contrib/tracking
 include($$LIVECV_DEV_PATH/project/plugin.pri)
 TARGET = live_opencv_tracking
 
-uri = tracking
+uri = opencv.contrib.tracking
 
 DEFINES += Q_LCV
 

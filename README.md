@@ -7,12 +7,12 @@
 This plugin contains Open CV Contrib module QML wrappers that can be used for Live CV.
 
  * **Version**: 1.0.0
- * **License**: LGPL
+ * **License**: LGPL + Non Commercial for a set of components (See below)
  * **Website**: [livecv.dinusv.com](http://livecv.dinusv.com)
  * **Documentation**: [livecv.dinusv.com/documentation](http://livecv.dinusv.com/documentation)
  * **Build Requirements**:
    * Qt 5.6 or higher
-   * Open CV 3.1 or higher
+   * Open CV Contrib 3.1 or higher
    
 
 ## Installation and getting started
@@ -31,9 +31,20 @@ make (or nmake)
 
 Include the plugins within LiveCV's path/plugins after which you can import them from Live CV : (```import opencv.contrib.core 1.0```).
 
+## Non Commercial Components
+
+Within this package, some components (e.g SIFT and SURF) cannot be used commercially. To maintain it's licensing, they are
+not compiled within the release of this module, and you will have to compile them manually with the BUILD_NON_FREE flag set.
+
+```
+cd build
+qmake -r "BUILD_NON_FREE=true"
+make (or nmake)
+```
+
 ## Contributing
 
-There's an [organization on github](http://github.com/livecv) created for Live CV plugins and projects, so anyone looking to contribute is always welcome. Check out livecv/CONTRIBUTING article for more info.
+The [organization on github](http://github.com/livecv) is created for Live CV plugins and projects, so anyone looking to contribute is always welcome. Check out livecv/CONTRIBUTING article for more info.
 
 There's a forum available for discussions on [live cv's website](http://livecv.dinusv.com/forum).
 

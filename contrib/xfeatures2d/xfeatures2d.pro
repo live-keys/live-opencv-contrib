@@ -11,8 +11,10 @@ DEFINES += Q_LCV
 
 ## Dependencies
 
-linkPlugin(live,    live)
-linkPlugin(lcvcore, lcvcore)
+linkPlugin(live,          live)
+linkPlugin(lcvcore,       lcvcore)
+linkPlugin(lcvfeatures2d, lcvfeatures2d)
+linkLibrary(lvbase, lvbase)
 
 ## Deploying qml is handled by the plugin.pri configuration
 
