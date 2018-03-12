@@ -14,7 +14,7 @@ before_build:
   - SET ARCH=x64
   - SET APP_PATH=%CD%
   - ps: $file = "$pwd\opencv.zip"
-  - ps: (new-object System.Net.WebClient).Downloadfile("https://github.com/livecv/opencv_contrib/releases/download/3.4.1/opencv-contrib-3-4-1-msvc2015-x64-release.zip", $file)
+  - ps: (new-object System.Net.WebClient).Downloadfile("https://github.com/livecv/opencv_contrib/releases/download/3.4.0/opencv-contrib-3-4-0-msvc2015-x64-release.zip", $file)
   - ps: 7z x -y $file -o"."
   - ls
   - echo %CD%
