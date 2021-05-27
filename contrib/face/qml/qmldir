@@ -5,4 +5,4 @@ depends QtQuick 2.3
 depends base 1.0
 
 FaceLandmarkDetection   1.0 FaceLandmarkDetection.qml
-
+DrawFaceLandmarks       1.0 DrawFaceLandmarks.qml

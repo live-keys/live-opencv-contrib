@@ -28,4 +28,5 @@ OTHER_FILES *= \
     qml/qmldir
 
 DISTFILES += \
+    qml/DrawFaceLandmarks.qml \
     qml/FaceLandmarkDetection.qml
