@@ -1,5 +1,7 @@
 TEMPLATE = subdirs
-SUBDIRS += tracking
+# SUBDIRS += tracking
 SUBDIRS += xfeatures2d
-tracking.subdir = tracking
+SUBDIRS += face
+# tracking.subdir = tracking
 xfeatures2d.subdir = xfeatures2d
+face.subdir = face

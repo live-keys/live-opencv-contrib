@@ -57,8 +57,8 @@ void SIFTFeatureDetector::detect(){
 void SIFTFeatureDetector::componentComplete(){
     QQmlEngine* engine = qmlEngine(this);
     if ( engine ){
-        QObject* livecv = engine->rootContext()->contextProperty("livecv").value<QObject*>();
-        lv::Settings* settings = static_cast<lv::Settings*>(livecv->property("settings").value<QObject*>());
+        QObject* livekeys = engine->rootContext()->contextProperty("livekeys").value<QObject*>();
+        lv::Settings* settings = static_cast<lv::Settings*>(livekeys->property("settings").value<QObject*>());
 
         QLicenseSettings* ls = qobject_cast<QLicenseSettings*>(settings->file("license"));
         m_licenseAccepted = ls->require(

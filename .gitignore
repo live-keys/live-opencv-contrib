@@ -1,4 +1,4 @@
 opencvcontrib.pro.user
 build/*
 !build/.gitignore
-livecv
+livekeys

@@ -2,7 +2,7 @@ PLUGIN_NAME = tracking
 PLUGIN_PATH = opencv/contrib/tracking
 
 ## PLUGIN_NAME and PLUGIN_PATH must be set up prior to including this config file
-include($$LIVECV_DEV_PATH/project/plugin.pri)
+include($$LIVEKEYS_DEV_PATH/project/plugin.pri)
 TARGET = live_opencv_tracking
 
 uri = opencv.contrib.tracking
@@ -19,7 +19,7 @@ linkPlugin(lcvcore, lcvcore)
 ## Source
 
 include($$PWD/src/tracking.pri)
-include($$LIVECV_DEV_PATH/project/3rdparty/opencv.pri)
+include($$LIVEKEYS_DEV_PATH/project/3rdparty/opencv.pri)
 
 OTHER_FILES *= \
     qml/*.qml \
