@@ -1,11 +1,11 @@
-PLUGIN_NAME = xfeatures2d
-PLUGIN_PATH = opencv/contrib/xfeatures2d
+PLUGIN_NAME = face
+PLUGIN_PATH = opencv/contrib/face
 
 ## PLUGIN_NAME and PLUGIN_PATH must be set up prior to including this config file
 include($$LIVEKEYS_DEV_PATH/project/plugin.pri)
-TARGET = live_opencv_xfeatures2d
+TARGET = live_opencv_face
 
-uri = opencv.contrib.xfeatures2d
+uri = opencv.contrib.face
 
 DEFINES += Q_LCV
 
@@ -13,16 +13,19 @@ DEFINES += Q_LCV
 
 linkPlugin(live,          live)
 linkPlugin(lcvcore,       lcvcore)
-linkPlugin(lcvfeatures2d, lcvfeatures2d)
 linkLibrary(lvbase, lvbase)
+linkLibrary(lvview, lvview)
 
 ## Deploying qml is handled by the plugin.pri configuration
 
 ## Source
 
-include($$PWD/src/xfeatures2d.pri)
+include($$PWD/src/face.pri)
 include($$LIVEKEYS_DEV_PATH/project/3rdparty/opencv.pri)
 
 OTHER_FILES *= \
     qml/*.qml \
     qml/qmldir
+
+DISTFILES += \
+    qml/FaceLandmarkDetection.qml

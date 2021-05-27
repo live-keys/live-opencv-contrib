@@ -50,7 +50,7 @@ private:
     bool                 m_isTrackerInit;
     QMat*                m_in;
     QRect                m_boundingBox;
-    cv::Rect2d           m_boundingBoxInternal;
+    cv::Rect2i           m_boundingBoxInternal;
     QVariantMap          m_params;
 
     QMat*                m_display;
@@ -63,10 +63,10 @@ inline QMat* Tracker::inputMat(){
 }
 
 inline void Tracker::setInputMat(QMat *mat){
-    if ( mat->cvMat()->empty() )
+    if ( mat->internalPtr()->empty() )
         return;
 
-    cv::Mat* matData = mat->cvMat();
+    cv::Mat* matData = mat->internalPtr();
     if ( implicitWidth() != matData->cols || implicitHeight() != matData->rows ){
         setImplicitWidth(matData->cols);
         setImplicitHeight(matData->rows);
@@ -95,8 +95,8 @@ inline void Tracker::init(QMat *m, const QRect &bbox, const QVariantMap &params)
     emit boundingBoxChanged();
     emit paramsChanged();
 
-    if ( !m->cvMat()->empty() && !bbox.isEmpty() ){
-        m_tracker->init(*m->cvMat(), cv::Rect(bbox.x(), bbox.y(), bbox.width(), bbox.height()));
+    if ( !m->internalPtr()->empty() && !bbox.isEmpty() ){
+        m_tracker->init(*m->internalPtr(), cv::Rect(bbox.x(), bbox.y(), bbox.width(), bbox.height()));
     }
 }
 

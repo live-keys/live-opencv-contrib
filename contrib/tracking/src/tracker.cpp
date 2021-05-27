@@ -40,8 +40,8 @@ void Tracker::initializeTracker(cv::Ptr<cv::Tracker> tracker){
 }
 
 void Tracker::track(){
-    if ( m_tracker != nullptr && !m_in->cvMat()->empty() && isComponentComplete() ){
-         m_tracker->update(*m_in->cvMat(), m_boundingBoxInternal);
+    if ( m_tracker != nullptr && !m_in->internalPtr()->empty() && isComponentComplete() ){
+         m_tracker->update(*m_in->internalPtr(), m_boundingBoxInternal);
          m_boundingBox.setX(m_boundingBoxInternal.x);
          m_boundingBox.setY(m_boundingBoxInternal.y);
          m_boundingBox.setWidth(m_boundingBoxInternal.width);
@@ -58,9 +58,9 @@ void Tracker::componentComplete(){
 }
 
 QSGNode* Tracker::updatePaintNode(QSGNode *node, UpdatePaintNodeData *){
-    if ( m_displayDirty && !m_in->cvMat()->empty() ){
-        m_in->cvMat()->copyTo(*m_display->cvMat());
-        cv::rectangle(*m_display->cvMat(), m_boundingBoxInternal, cv::Scalar());
+    if ( m_displayDirty && !m_in->internalPtr()->empty() ){
+        m_in->internalPtr()->copyTo(*m_display->internalPtr());
+        cv::rectangle(*m_display->internalPtr(), m_boundingBoxInternal, cv::Scalar());
     }
 
     QMatNode* n = static_cast<QMatNode*>(node);

@@ -1,0 +1,8 @@
+module opencv.contrib.face
+plugin live_opencv_face
+
+depends QtQuick 2.3
+depends base 1.0
+
+FaceLandmarkDetection   1.0 FaceLandmarkDetection.qml
+
